@@ -13,6 +13,6 @@
     <Folder Include="StudentCourse\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KUSYSDemoApp.DataAccess copy\KUSYSDemoApp.DataAccess.csproj" />
+    <ProjectReference Include="..\KUSYSDemoApp.DataAccess\KUSYSDemoApp.DataAccess.csproj" />
   </ItemGroup>
 </Project>
