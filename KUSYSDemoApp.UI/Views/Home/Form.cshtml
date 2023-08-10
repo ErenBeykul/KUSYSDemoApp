@@ -1,0 +1,82 @@
+﻿@model KUSYSDemoApp.UI.ViewModels.StudentViewModel
+
+@{
+    string action = Model.Id == Guid.Empty ? "Ekleme" : "Düzenleme";
+    ViewData["Title"] = "Öğrenci " + action;
+}
+
+<!--begin::Portlet-->
+<div class="kt-portlet">
+    <div class="kt-portlet__head">
+        <div class="kt-portlet__head-label">
+            <h3 class="kt-portlet__head-title">
+                @ViewData["Title"]
+            </h3>
+        </div>
+    </div>
+
+    <!--begin::Form-->
+    <form asp-controller="Home" asp-action="Form" method="post" data-ajax="true" data-ajax-begin="onbegin" data-ajax-complete="oncomplete" data-ajax-success="onsuccess" class="kt-form kt-form--label-left">
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.Id)
+
+        <div class="kt-portlet__body">
+            <div class="form-group row">
+                <label for="name" class="col-2 col-form-label">Adı<span> *</span></label>
+                <div class="col-10">
+                    <input asp-for="Name" class="form-control" type="text" value="@Model.Name" maxlength="100" id="name" placeholder="Adı" required />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="surname" class="col-2 col-form-label">Soyadı<span> *</span></label>
+                <div class="col-10">
+                    <input asp-for="Surname" class="form-control" type="text" value="@Model.Surname" maxlength="100" id="surname" placeholder="Soyadı" required />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="birthdate" class="col-2 col-form-label">Doğum Tarihi<span> *</span></label>
+                <div class="col-10">
+                    <input asp-for="BirthDate" class="form-control" type="date" value="@Model.BirthDate" id="birthdate" placeholder="Doğum Tarihi" required />
+                </div>
+            </div>
+        </div>
+
+        <div class="kt-portlet__foot">
+            <div class="kt-form__actions">
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-10">
+                        <button type="submit" class="btn btn-primary"> Kaydet </button>
+                        <a href="@Url.Action("", "Home")" class="btn btn-danger"> Vazgeç </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!--end::Form-->
+</div>
+
+<!--end::Portlet-->
+
+@section Scripts{
+    <script>
+        function onbegin() { KTApp.blockPage(); }
+
+        function oncomplete() { window.setTimeout(function () { KTApp.unblockPage(); }, 100); }
+
+        function onsuccess(result) {
+            swal.fire({
+                type: result.type,
+                title: result.message,
+                showConfirmButton: false,
+                timer: 2500
+            });
+
+            if (result.isSuccess) window.setTimeout(function () { parent.location = "@Url.Action("", "Home")"; }, 2500);
+        }
+
+    </script>
+}
