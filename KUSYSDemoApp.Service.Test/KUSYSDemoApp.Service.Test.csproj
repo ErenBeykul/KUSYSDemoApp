@@ -35,6 +35,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KUSYSDemoApp copy.Service.app.Service\KUSYSDemoApp.Service.csproj" />
+    <ProjectReference Include="..\KUSYSDemoApp.Service\KUSYSDemoApp.Service.csproj" />
   </ItemGroup>
 </Project>
