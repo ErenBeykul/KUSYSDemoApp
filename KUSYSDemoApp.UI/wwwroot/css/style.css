@@ -1,0 +1,11 @@
+﻿.kt-header__brand, .kt-header__topbar-icon, .kt-subheader-search {
+    background-color: #ac172b !important
+}
+
+.kt-link:hover,
+.kt-menu__item--active > .kt-menu__link .kt-menu__link-icon,
+.kt-menu__item--active > .kt-menu__link .kt-menu__link-text,
+.kt-menu__item:hover > .kt-menu__link .kt-menu__link-icon,
+.kt-menu__item:hover > .kt-menu__link .kt-menu__link-text {
+    color: #ac172b !important
+}
