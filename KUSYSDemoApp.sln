@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KUSYSDemoApp.DataAccess", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KUSYSDemoApp.Service", "KUSYSDemoApp.Service\KUSYSDemoApp.Service.csproj", "{A170633B-C9A5-4088-A58D-759405B8E927}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KUSYSDemoApp.Service.Test", "KSYSDemoApp.Service.Test\KUSYSDemoApp.Service.Test.csproj", "{3407F8F8-6489-4634-8B7C-97B74EB14C4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KUSYSDemoApp.Service.Test", "KSYSDemoApp.Service.Test\KUSYSDemoApp.Service.Test.csproj", "{D780C849-7565-4045-A4F8-A64CFAF00A4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
